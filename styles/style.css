@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", sans-serif;
+}
+
+/* Geral Settings */
+
+:root {
+    --main-color: rgb(118, 49, 216);
+    --second-color: rgb(255, 0, 68);
+}
+
+h1 {
+    color: var(--main-color);
+    font-size: 4rem;
+}
+
+.btn {
+    padding: 15px 35px;
+}
+
+
+/* HOME SECTION */
+#home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.home-container {
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
