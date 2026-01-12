@@ -70,3 +70,47 @@ h1 {
     align-items: center;
     gap: 35px;
 }
+
+/* CASE SELECTION SECTION */
+
+#case-section {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.case-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.case-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.selection-case-container {
+    display: flex;
+    width: 1075px;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.case-option {
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(119, 49, 216, 0.178);
+    border-radius: 10px;
+    border: 3px solid var(--main-color);
+    width: 250px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.case-option img {
+    width: 50%;
+}

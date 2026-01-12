@@ -19,12 +19,42 @@ const homeSection = document.getElementById("home-section");
 const caseSection = document.getElementById("case-section");
 
 
-function switchScene(old, newer) {
+function switchSection(old, newer) {
     old.classList.add("hidden");
     newer.classList.remove("hidden");
 }
 
 
 document.getElementById("comecar-agora").addEventListener('click', () => {
-    switchScene(homeSection, caseSection);
+    switchSection(homeSection, caseSection);
 })
+
+components.cases.forEach(el => {
+    createCaseOption(el);
+})
+
+function createCaseOption(el) {
+    const selectionCaseContainer = document.getElementById("selection-case-container");
+    // cria componente de gabinete e coloca no pai
+    //cada componente vai ter uma funcao ao clicar
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const name = document.createElement("p");
+    const price = document.createElement("p");
+
+
+    img.src = el.image;
+    name.innerText = el.name;
+    price.innerText = el.price;
+
+    div.classList.add("case-option");
+
+    div.appendChild(img);
+    div.appendChild(name);
+    div.appendChild(price);
+
+    selectionCaseContainer.appendChild(div);
+
+    
+
+}
