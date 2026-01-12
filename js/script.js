@@ -12,7 +12,7 @@ const components = {
         {name: "Gabinete Gamer Hyrax HGB310", price: 129, image: "https://images4.kabum.com.br/produtos/fotos/685834/gabinete-hyrax-tower-hgb310-preto-hgb310b_1753703353_gg.jpg"},
         {name: "Gabinete Gamer Husky Dome 110", price: 239, image: "https://images7.kabum.com.br/produtos/fotos/609387/gabinete-gamer-husky-dome-110-mid-tower-atx-lateral-em-vidro-sem-fans-preto-hgn110pt_1760119494_gg.jpg"},
         {name: "Gabinete Liketec Hurricane, Frontal Mesh", price: 159, image: "https://images8.kabum.com.br/produtos/fotos/883978/gabinete-liketec-hurricane-frontal-mesh-lateral-em-vidro-3x-fan-rainbow-lc-at-hurricane-3fr_1753194868_gg.jpg"}
-    ]
+    ] 
 }
 
 const homeSection = document.getElementById("home-section");
@@ -45,7 +45,8 @@ function createCaseOption(el) {
 
     img.src = el.image;
     name.innerText = el.name;
-    price.innerText = el.price;
+    price.innerText = "R$ " + el.price;
+    price.classList.add("price-content");
 
     div.classList.add("case-option");
 

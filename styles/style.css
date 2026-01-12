@@ -8,7 +8,7 @@
 
 /* Geral Settings */
 
-:root {
+:root { 
     --main-color: rgb(118, 49, 216);
     --main-color-darker: rgb(96, 39, 175);
     --gradient: linear-gradient(90deg,rgba(77, 54, 208, 1) 0%,rgba(132, 116, 254, 1) 100%);
@@ -54,6 +54,7 @@ h1 {
 
 
 
+
 /* HOME SECTION */
 #home-section {
     display: flex;
@@ -80,6 +81,7 @@ h1 {
     align-items: center;
 }
 .case-container {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,24 +95,77 @@ h1 {
 }
 .selection-case-container {
     display: flex;
-    width: 1075px;
+    max-width: 1090px;
     gap: 25px;
     flex-wrap: wrap;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 25px;
+    
+}
+.selection-case-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* O fundo por onde a barra corre */
+.selection-case-container::-webkit-scrollbar-track {
+  background: #ffffff; /* Cor escura de fundo */
+  border-radius: 5px;
+}
+
+/* A "alça" que você arrasta */
+.selection-case-container::-webkit-scrollbar-thumb {
+  background: var(--main-color); /* Cor da barra */
+  border-radius: 5px;
+}
+
+/* Quando passa o mouse em cima da alça */
+.selection-case-container::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color-darker); /* Cor ao passar o mouse */
 }
 .case-option {
+    width: 250px;
+    height: 250px;
     text-align: center;
-    box-shadow: 5px 5px 10px rgba(119, 49, 216, 0.178);
     border-radius: 10px;
     border: 3px solid var(--main-color);
-    width: 250px;
-    height: 200px;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(141, 74, 234, 0.448);
+    transition: all .2s ease-in-out;
 }
 .case-option img {
     width: 50%;
+}
+.case-option:hover {
+    transform: scale(1.05);
+}
+.price-content {
+    color: var(--white-color);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    background: var(--gradient);
+}
+
+
+@media (max-width: 768px) {
+    #home-section {
+        box-sizing: border-box;
+        padding: 35px;
+    }
+    #case-section {
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .case-option {
+        width: 100%;
+    }
 }
