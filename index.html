@@ -45,12 +45,19 @@
             </div>
 
             <div class="grid-layout">
-                <div class="card component">CPU</div>
+                <div class="card component">
+                    <div class="img-component">+</div>
+                    <div class="component-label">CPU</div>
+                </div>
                 <div class="card component">Cooler</div>
                 <div class="card component">RAM</div>
 
                 <div class="card pc-preview">
-                    VISUALIZAÇÃO DO PC
+                    <img src="https://images9.kabum.com.br/produtos/fotos/516119/gabinete-rise-mode-x1-black-mini-tower-m-atx-preto-rm-ga-ofx1-fb_1718977329_gg.jpg" alt="Case image">
+                    <div class="label-pc-preview">
+                        <span id="total-price-label">Custo total: </span>
+                        <span id="total-price">00,000,000</span>
+                    </div>
                 </div>
 
                 <div class="card component">GPU</div>
@@ -62,6 +69,15 @@
 
 
     </section>
+
+    <div id="modal">
+        <div id="modal-title">
+            <h2>Componente</h2>
+            <button type="button">
+                <img src="imgs/close.svg" alt="" srcset="">
+            </button>
+        </div>
+    </div>
 
 
     <script src="js/script.js"></script>

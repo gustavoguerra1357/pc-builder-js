@@ -92,7 +92,7 @@ h1 {
     max-width: 1090px;
     gap: 25px;
     flex-wrap: wrap;
-    max-height: 600px;
+    max-height: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 20px;
@@ -155,9 +155,8 @@ h1 {
     align-items: center;
 }
 .assembly-container {
-    border: 1px solid red;
     width: 90%;
-    max-width: 1600px;
+    max-width: 980px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,8 +176,9 @@ h1 {
     grid-template-rows: repeat(3, 1fr);
 
     gap: 15px;
-    height: 600px; 
+    height: 500px; 
     
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -186,18 +186,38 @@ h1 {
     grid-column: 2;
     grid-row: 1 / span 3; 
     
-    background-color: #2a2a2a;
     border-radius: 10px;
+    border: 3px solid var(--main-color);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.label-pc-preview {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px 0px 7px 7px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background: var(--gradient);
+    padding: 15px;
+    color: var(--white-color);
+}
+.pc-preview img {
+    width: 80%;
 }
 .component {
-    width: 220px;
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
+    width: 100%;
+    border: 3px dashed var(--main-color);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
