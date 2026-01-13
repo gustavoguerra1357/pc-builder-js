@@ -28,7 +28,7 @@
                 <p>Aqui você vai escolher o chassi do seu PC</p>
             </div>
 
-            <div id="selection-case-container" class="selection-case-container">
+            <div id="selection-case-container" class="selection-component-container">
                 <!-- Script que vai exibir todos os gabinetes disponiveis -->
 
             </div>
@@ -45,24 +45,40 @@
             </div>
 
             <div class="grid-layout">
-                <div class="card component">
-                    <div class="img-component">+</div>
+                <div class="card component" data-type="Processador">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
                     <div class="component-label">CPU</div>
                 </div>
-                <div class="card component">Cooler</div>
-                <div class="card component">RAM</div>
+                <div class="card component" data-type="Placa Mãe">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
+                    <div class="component-label">Placa Mãe</div>
+                </div>
+                <div class="card component" data-type="Memória Ram">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
+                    <div class="component-label">Ram</div>
+                </div>
 
                 <div class="card pc-preview">
-                    <img src="https://images9.kabum.com.br/produtos/fotos/516119/gabinete-rise-mode-x1-black-mini-tower-m-atx-preto-rm-ga-ofx1-fb_1718977329_gg.jpg" alt="Case image">
+                    <img src="https://images9.kabum.com.br/produtos/fotos/516119/gabinete-rise-mode-x1-black-mini-tower-m-atx-preto-rm-ga-ofx1-fb_1718977329_gg.jpg"
+                        alt="Case image">
                     <div class="label-pc-preview">
                         <span id="total-price-label">Custo total: </span>
                         <span id="total-price">00,000,000</span>
                     </div>
                 </div>
 
-                <div class="card component">GPU</div>
-                <div class="card component">SSD</div>
-                <div class="card component">Fonte</div>
+                <div class="card component" data-type="Placa de Vídeo">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
+                    <div class="component-label">Placa de Vídeo</div>
+                </div>
+                <div class="card component" data-type="Armazenamento">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
+                    <div class="component-label">Armazenamento</div>
+                </div>
+                <div class="card component" data-type="Fonte">
+                    <div class="img-component"><img src="imgs/add.svg" alt="" srcset=""></div>
+                    <div class="component-label">Fonte</div>
+                </div>
             </div>
 
         </div>
@@ -70,12 +86,16 @@
 
     </section>
 
-    <div id="modal">
+    <div id="modal" class="hidden">
         <div id="modal-title">
-            <h2>Componente</h2>
-            <button type="button">
-                <img src="imgs/close.svg" alt="" srcset="">
+            <h2 id="component-title">Componente</h2>
+            <button onclick="closeModal()" class="close-button" type="button">
+                <img class="close-button-img" src="imgs/close.svg" alt="" srcset="">
             </button>
+        </div>
+        <div id="selection-component-container" class="selection-component-container">
+                <!-- Script que vai exibir todos os componentes disponiveis -->
+
         </div>
     </div>
 
