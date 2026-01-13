@@ -15,8 +15,19 @@ const components = {
     ] 
 }
 
+const myPC = {
+    case: "",
+    motherBoard: "",
+    videoBoard: "",
+    ram: "",
+    processor: "",
+    powerSupply: "",
+    storage: "",
+}
+
 const homeSection = document.getElementById("home-section");
 const caseSection = document.getElementById("case-section");
+const assemblySection = document.getElementById("assembly-section");
 
 
 function switchSection(old, newer) {
@@ -53,6 +64,10 @@ function createCaseOption(el) {
     div.appendChild(img);
     div.appendChild(name);
     div.appendChild(price);
+
+    div.addEventListener('click', el => {
+        switchSection(caseSection, assemblySection)
+    })
 
     selectionCaseContainer.appendChild(div);
 

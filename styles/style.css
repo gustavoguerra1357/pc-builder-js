@@ -24,12 +24,6 @@ h1 {
     -webkit-background-clip: text;
     color: transparent;
 }
-
-/* Script settings */
-.hidden {
-    display: none !important;
-}
-
 .btn {
     width: 100%;
     padding: 15px 20px;
@@ -43,8 +37,6 @@ h1 {
     background-color: transparent;
     transition: all .2s ease-in-out;
     background: var(--gradient);
-
-
 }
 
 .btn:hover {
@@ -52,8 +44,10 @@ h1 {
     transform: scale(1.05);
 }
 
-
-
+/* Script settings */
+.hidden {
+    display: none !important;
+}
 
 /* HOME SECTION */
 #home-section {
@@ -109,22 +103,19 @@ h1 {
   width: 10px;
 }
 
-/* O fundo por onde a barra corre */
+/* Scrollbar settings */
 .selection-case-container::-webkit-scrollbar-track {
-  background: #ffffff; /* Cor escura de fundo */
+  background: #ffffff;
   border-radius: 5px;
 }
-
-/* A "alça" que você arrasta */
 .selection-case-container::-webkit-scrollbar-thumb {
-  background: var(--main-color); /* Cor da barra */
+  background: var(--main-color); 
   border-radius: 5px;
 }
-
-/* Quando passa o mouse em cima da alça */
 .selection-case-container::-webkit-scrollbar-thumb:hover {
-  background: var(--main-color-darker); /* Cor ao passar o mouse */
+  background: var(--main-color-darker); 
 }
+
 .case-option {
     width: 250px;
     height: 250px;
@@ -153,6 +144,65 @@ h1 {
     background-color: transparent;
     transition: all .2s ease-in-out;
     background: var(--gradient);
+}
+
+/* ASSEMBLY SECTION */
+
+#assembly-section {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.assembly-container {
+    border: 1px solid red;
+    width: 90%;
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.assembly-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    flex-direction: column;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 15px;
+    height: 600px; 
+    
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.pc-preview {
+    grid-column: 2;
+    grid-row: 1 / span 3; 
+    
+    background-color: #2a2a2a;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.component {
+    width: 220px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 
