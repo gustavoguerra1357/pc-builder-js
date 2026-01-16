@@ -123,12 +123,12 @@ function openModal(tipo) {
     switch (tipo) {
         case "Processador":
             components.cpu.forEach(el => {
-                createComponentOption(el);
+                createComponentOption(el, "Processador");
             })
             break
         case "Placa de Vídeo":
             components.gpu.forEach(el => {
-                createComponentOption(el);
+                createComponentOption(el, "Placa de Vídeo");
             })
             break
 
@@ -142,7 +142,7 @@ function closeModal() {
         el.remove();
     })
 }
-function createComponentOption(el) {
+function createComponentOption(el, type) {
     const selectionComponentContainer = document.getElementById("selection-component-container");
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -163,7 +163,10 @@ function createComponentOption(el) {
 
     div.addEventListener('click', elemento => {
         //atualiza meu pc, o preco e preche o bagulho
+        const card = document.querySelector(`[data-type="${type}"]`);
+        card.classList.add("filled");
 
+        card.querySelector("img").src = el.image;
 
         closeModal();
     })
