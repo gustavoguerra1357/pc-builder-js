@@ -29,7 +29,7 @@ const components = {
     ],
     gpu: [
         { name: "Placa de Vídeo RX 6600 CLD 8G ASRock", price: 1499.99, image: "https://images4.kabum.com.br/produtos/fotos/235984/placa-de-video-asrock-amd-radeon-rx-6600-cld-8g-8gb-90-ga2rzz-00uanf_1634738812_gg.jpg" },
-        { name: "Placa de Vídeo RX 7600 Series Graphics", price:  1549.99, image: "https://images2.kabum.com.br/produtos/fotos/463542/placa-de-video-rx-7600-series-graphics-cards-xfx-amd-radeon-8gb-gddr6-rx-76pswftfy_1687890891_gg.jpg" },
+        { name: "Placa de Vídeo RX 7600 Series Graphics", price: 1549.99, image: "https://images2.kabum.com.br/produtos/fotos/463542/placa-de-video-rx-7600-series-graphics-cards-xfx-amd-radeon-8gb-gddr6-rx-76pswftfy_1687890891_gg.jpg" },
         { name: "Placa de Vídeo XFX AMD RADEON RX 7600 ", price: 1599.99, image: "https://images5.kabum.com.br/produtos/fotos/723235/placa-de-video-amd-radeon-rx-7600-gaming-graphics-card-8gb-gddr6-rx-76pmbabfy_1740593267_gg.jpg" },
         { name: "Placa de Vídeo RX 7600 GAMING OC 8G", price: 1749.99, image: "https://images7.kabum.com.br/produtos/fotos/475647/placa-de-video-rx-7600-gaming-oc-8g-radeon-gigabyte-8gb-gddr6-128bits-rgb-gv-r76gaming-oc-8gd_1698435450_gg.jpg" },
         { name: "Placa de Vídeo ASUS DUAL RTX 5060 O8G NVIDIA", price: 2499.99, image: "https://images5.kabum.com.br/produtos/fotos/781225/placa-de-video-dual-rtx5060-o8g_1747314234_gg.jpg" },
@@ -37,7 +37,7 @@ const components = {
         { name: "Placa de Vídeo MSI RTX 5060 8G VENTUS 3X ", price: 2499.99, image: "https://images5.kabum.com.br/produtos/fotos/801935/placa-de-video-msi-rtx-5060-8g-ventus-3x-oc-geforce_1747656356_gg.jpg" },
         { name: "Placa de Vídeo MSI RTX 5070 12G Shadow", price: 4199.99, image: "https://images2.kabum.com.br/produtos/fotos/782142/placa-de-video-msi-rtx-5070-12g-shadow-2x-oc-nvdia-geforce-g5070-12s2c_1749495336_gg.jpg" },
         { name: "Placa de Vídeo MSI GeForce RTX 5060 Ti 8G", price: 2899.99, image: "https://images9.kabum.com.br/produtos/fotos/893049/placa-de-video-msi-geforce-rtx-5060-ti-8g-shadow-2x-oc-plus-nvidia-geforce-8gb-gddr7-128-bit-g506t-8s2cp_1753900267_gg.jpg" },
-        { name: "Placa de Vídeo Gigabyte RTX 5070 EAGLE OC SFF 12G NVIDIA GeForce, 12GB", price:  4899.89, image: "https://images3.kabum.com.br/produtos/fotos/714573/placa-de-video-rtx-5070-eagle-oc-sff-12g-gigabyte-nvidia-geforce-12gb-gddr7-192bits-rgb-dlss-ray-tracing-9vn5070eo-00-g10_1740569788_gg.jpg" },
+        { name: "Placa de Vídeo Gigabyte RTX 5070 EAGLE OC SFF 12G NVIDIA GeForce, 12GB", price: 4899.89, image: "https://images3.kabum.com.br/produtos/fotos/714573/placa-de-video-rtx-5070-eagle-oc-sff-12g-gigabyte-nvidia-geforce-12gb-gddr7-192bits-rgb-dlss-ray-tracing-9vn5070eo-00-g10_1740569788_gg.jpg" },
         { name: "Placa de Vídeo Palit GeForce RTX 5060 Infinity 3 OC NVIDIA", price: 2399.99, image: "https://images0.kabum.com.br/produtos/fotos/776930/placa-de-video-palit-geforce-rtx-5060-infinity-3-oc-nvidia-geforce-8gb-gddr7-128bits-fp4-e-dlss-4-ray-tracing-ne75060t19p1-gb2063s_1747393915_gg.jpg" },
         { name: "Placa De Vídeo Nvidia Geforce Msi RTX5060ti Ventus", price: 5508.00, image: "https://images8.kabum.com.br/produtos/fotos/sync_mirakl/986938/xlarge/Placa-De-V-deo-Nvidia-Geforce-Msi-RTX5060ti-Ventus-Oc-Black-Plus-2x-16gb-128-Bits-HDMI-3x-Dp-912-v535_1768414132.jpg" },
 
@@ -67,10 +67,6 @@ function switchSection(old, newer) {
     old.classList.add("hidden");
     newer.classList.remove("hidden");
 }
-
-
-
-
 
 
 document.getElementById("comecar-agora").addEventListener('click', () => {
@@ -166,7 +162,10 @@ function createComponentOption(el) {
     div.appendChild(price);
 
     div.addEventListener('click', elemento => {
+        //atualiza meu pc, o preco e preche o bagulho
 
+
+        closeModal();
     })
 
     selectionComponentContainer.appendChild(div);
@@ -174,6 +173,8 @@ function createComponentOption(el) {
 
 document.querySelectorAll(".component").forEach(clicked => {
     clicked.addEventListener("click", el => {
-        openModal(clicked.dataset.type)
+        if(modal.classList.contains("hidden")) {
+            openModal(clicked.dataset.type)
+        }
     })
 })
