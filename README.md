@@ -30,4 +30,4 @@ Não é necessário instalar nenhuma dependência (npm/yarn). Como é um projeto
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/pc-builder.git](https://github.com/seu-usuario/pc-builder.git)
+   git clone https://github.com/gustavoguerra1357/pc-builder-js.git
