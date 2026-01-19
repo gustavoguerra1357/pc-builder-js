@@ -181,6 +181,8 @@ function createComponentOption(el, type, selected) {
 }
 
 function updatePrice(selected, price, name) {
+    const pricelabel = document.getElementById("total-price");
+
     myPC[selected][0] = name;
     myPC[selected][1] = price;
     console.log(myPC);
@@ -190,7 +192,14 @@ function updatePrice(selected, price, name) {
         }
         return total;
     }, 0);
+
+    let formatador = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
     console.log("Preço Total:", myPC.price);
+    pricelabel.innerText = formatador.format(myPC.price)
+
 
     
 
