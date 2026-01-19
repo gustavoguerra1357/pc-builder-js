@@ -103,11 +103,11 @@ function createCaseOption(el) {
 
     div.addEventListener('click', elemento => {
         switchSection(caseSection, assemblySection)
-        myPC.price += el.price;
-        myPC.case[0] = el.name;
-        myPC.case[1] = el.price;
+        updatePrice("case", el.price, el.name)
         myPC.img = el.image;
-        console.log(myPC);
+        
+
+        console.log("preco total = " + myPC.price); 
     })
 
     selectionCaseContainer.appendChild(div);
@@ -123,12 +123,12 @@ function openModal(tipo) {
     switch (tipo) {
         case "Processador":
             components.cpu.forEach(el => {
-                createComponentOption(el, "Processador");
+                createComponentOption(el, "Processador", "processor");
             })
             break
         case "Placa de Vídeo":
             components.gpu.forEach(el => {
-                createComponentOption(el, "Placa de Vídeo");
+                createComponentOption(el, "Placa de Vídeo", "videoBoard");
             })
             break
 
@@ -142,7 +142,7 @@ function closeModal() {
         el.remove();
     })
 }
-function createComponentOption(el, type) {
+function createComponentOption(el, type, selected) {
     const selectionComponentContainer = document.getElementById("selection-component-container");
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -170,7 +170,8 @@ function createComponentOption(el, type) {
         card.querySelector(".component-label").innerText = String(el.name).slice(0, 30) + "...";
         card.querySelector(".price-content").classList.remove("hidden");
         card.querySelector(".price-content").innerText = "R$ " + el.price;
-        updatePrice();
+
+        updatePrice(selected, el.price, el.name);
 
 
         closeModal();
@@ -179,17 +180,20 @@ function createComponentOption(el, type) {
     selectionComponentContainer.appendChild(div);
 }
 
-function updatePrice() {
-    let totalPrice = myPC.case[1];
-    console.log(totalPrice)
-    const componentPrices = document.querySelectorAll(".grid-layout .price-content");
-    componentPrices.forEach(el => {
-        let currentPrice = parseFloat(el.innerText.slice(3,-1))
-        if(currentPrice) {
-            totalPrice += currentPrice
+function updatePrice(selected, price, name) {
+    myPC[selected][0] = name;
+    myPC[selected][1] = price;
+    console.log(myPC);
+    myPC.price = Object.values(myPC).reduce((total, item) => {
+        if (Array.isArray(item)) {
+            return total + item[1];
         }
-    })
-    console.log("new total price: " + totalPrice)
+        return total;
+    }, 0);
+    console.log("Preço Total:", myPC.price);
+
+    
+
 }   
 
 document.querySelectorAll(".component").forEach(clicked => {
