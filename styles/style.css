@@ -248,9 +248,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-.component img {
-    max-width: 100px;
-}
+
 
 .component:hover {
     transform: scale(1.05);
@@ -301,6 +299,12 @@ h1 {
     border: none;
 }
 .filled {
+    border: 3px solid var(--main-color);
+    font-size: 0.8rem;
+    gap: 5px;
+}
+.filled img {
+    max-width: 70px;
 }
 
 

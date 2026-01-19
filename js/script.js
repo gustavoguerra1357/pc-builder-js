@@ -167,6 +167,11 @@ function createComponentOption(el, type) {
         card.classList.add("filled");
 
         card.querySelector("img").src = el.image;
+        card.querySelector(".component-label").innerText = String(el.name).slice(0, 30) + "...";
+        card.querySelector(".price-content").classList.remove("hidden");
+        card.querySelector(".price-content").innerText = "R$ " + el.price;
+        updatePrice();
+
 
         closeModal();
     })
@@ -174,9 +179,22 @@ function createComponentOption(el, type) {
     selectionComponentContainer.appendChild(div);
 }
 
+function updatePrice() {
+    let totalPrice = myPC.case[1];
+    console.log(totalPrice)
+    const componentPrices = document.querySelectorAll(".grid-layout .price-content");
+    componentPrices.forEach(el => {
+        let currentPrice = parseFloat(el.innerText.slice(3,-1))
+        if(currentPrice) {
+            totalPrice += currentPrice
+        }
+    })
+    console.log("new total price: " + totalPrice)
+}   
+
 document.querySelectorAll(".component").forEach(clicked => {
     clicked.addEventListener("click", el => {
-        if(modal.classList.contains("hidden")) {
+        if (modal.classList.contains("hidden")) {
             openModal(clicked.dataset.type)
         }
     })
