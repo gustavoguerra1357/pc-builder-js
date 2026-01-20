@@ -4,6 +4,8 @@
 
 Um simulador de montagem de computadores desenvolvido com **JavaScript Puro**, focado na lógica de seleção de componentes e atualização dinâmica de orçamento.
 
+Deploy: https://gustavoguerra1357.github.io/pc-builder-js/
+
 ## 🚀 Tecnologias
 
 O foco deste projeto foi praticar os fundamentos do desenvolvimento web sem o uso de frameworks e bibliotecas externas.
